@@ -30,11 +30,9 @@ exports.getResponse = function (sessionId, query, socket, index) {
         .then(socket.emit('a_txt_loading', { loading: true }))
         .then(function (responses) {
             console.log('Detected intent');
+            console.log("Response: %j", responses[0]);
             const result = responses[0].queryResult;
-            console.log(` Complete Response: ${result.fulfillmentText}`);
-
             if (result.intent) {
-                console.log(`  Intent: ${result.intent.displayName}`);
                 socket.emit('a_txt_reply', { response: result.fulfillmentText, msg_index: index });
             } else {
                 console.log(`  No intent matched.`);
