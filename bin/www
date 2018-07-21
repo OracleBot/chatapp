@@ -7,6 +7,8 @@
 var app = require('../app');
 var debug = require('debug')('chatapp:server');
 var http = require('http');
+const agent = require('../agent');
+var sessionId = null;
 
 /**
  * Get port from environment and store in Express.
@@ -39,10 +41,11 @@ server.on('listening', onListening);
  */
 
 io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  console.log('Hello');
-  socket.on('my other event', function (data) {
-    console.log(data);
+  socket.emit('log', { socket: 'connection established' });
+  //Text Query
+  socket.on('h_txt_query', function (data) {
+    sessionId = app.get('sessionId');
+    agent.getResponse(sessionId, data.query, socket, data.msg_index);
   });
 });
 
@@ -56,12 +59,10 @@ function normalizePort(val) {
     // named pipe
     return val;
   }
-
   if (port >= 0) {
     // port number
     return port;
   }
-
   return false;
 }
 
