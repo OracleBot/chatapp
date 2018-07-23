@@ -6,7 +6,9 @@ const languageCode = 'en-US';
 
 // Instantiate a DialogFlow client.
 const dialogflow = require('dialogflow');
-const sessionClient = new dialogflow.SessionsClient();
+const sessionClient = new dialogflow.SessionsClient({
+    keyFilename: '/Users/diprish/Documents/Node/chatapp/ardysdev1-0b0166e72cee.json'
+});
 
 exports.getResponse = function (sessionId, query, socket, index) {
     console.log(`Session Id: ${sessionId}`);
