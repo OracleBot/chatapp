@@ -14,7 +14,10 @@ var sessionId = null;
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '8080');
+var port = normalizePort(process.env.PORT || '8080', function(){
+  console.log("Server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
+
 app.set('port', port);
 
 /**

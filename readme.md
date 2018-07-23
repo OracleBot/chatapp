@@ -7,6 +7,10 @@ $env:GOOGLE_APPLICATION_CREDENTIALS= "C:\Users\dipverma\Node\chatapp\ardysdev1-f
 set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\dipverma\Node\chatapp\ardysdev1-f045d2c6330e.json
 
 Mac
-GOOGLE_APPLICATION_CREDENTIALS=/Users/diprish/Documents/Node/chatapp/ardysdev1-0b0166e72cee.json
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/diprish/Documents/Node/chatapp/config/ardysdev1-dfe2e5d8e15b.json
 
 https://warm-refuge-85840.herokuapp.com/ | https://git.heroku.com/warm-refuge-85840.git
+
+Heroku--
+heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/ardysdev1-dfe2e5d8e15b.json’
+https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-heroku-for-node-js-app-dda9f4eda798
