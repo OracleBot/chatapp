@@ -9,9 +9,9 @@ set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\dipverma\Node\chatapp\ardysdev1-f045
 Mac
 export GOOGLE_APPLICATION_CREDENTIALS=/Users/diprish/Documents/Node/chatapp/config/ardysdev1-dfe2e5d8e15b.json
 
+Heroku--
 https://warm-refuge-85840.herokuapp.com/ | https://git.heroku.com/warm-refuge-85840.git
 
-Heroku--
 git push heroku master
 heroku ps:scale web=1
 heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ardysdev1-dfe2e5d8e15b.json

@@ -89,16 +89,16 @@ section {
     content: "\f09b";
 }
 
-.botui-app-container {
-  /* margin-top: 20px; */
+ .botui-app-container {
   width: 100%;
   height: 376px;
 }
 
 .botui-container {
   background-color: rgb(255, 255, 255);
-}
-.botui-message-content {
+} 
+
+/* .botui-message-content {
   color: rgb(255, 255, 255);
   background-color: #F1C40F;
 }
@@ -112,14 +112,38 @@ section {
   border-bottom: 1px solid #3498DB;
 }
 
+.botui-message-content-link {
+  color: #F1C40F;
+} 
+*/
+
 .botui-actions-buttons-button {
   line-height: 1 !important;
   background-color: #3498DB;
 }
 
-.botui-message-content-link {
-  color: #F1C40F;
+.botui-actions-buttons button {
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
 }
+
+.botui-actions-buttons:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.botui-actions-buttons button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.botui-actions-buttons-button+.botui-actions-buttons-button {
+  margin-top: 4px !important;
+  margin-right: 4px !important;
+  margin-left: 0px !important;
+}
+
 .chat-message {
   padding: 4px;
 }

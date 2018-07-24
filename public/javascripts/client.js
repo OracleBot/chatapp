@@ -42,3 +42,30 @@ socket.on('a_txt_loading', function (data) {
     loading: true
   });
 });
+
+socket.on('a_txt_reply_btn', function (data) {
+  textarea.disabled = true;
+  botui.action.button({
+    action: [
+      { 
+        text: 'Invoice Details',
+        value: 'Invoice'
+      },
+      { 
+        text: 'Invoice Payment Details',
+        value: 'Payment'
+      },
+      { 
+        text: 'Submit Report',
+        value: 'Report'
+      },
+      { 
+        text: 'Exit',
+        value: 'No'
+      }
+    ]
+  }).then(function (res) { // will be called when a button is clicked.
+    console.log(res.value); // will print "one" from 'value'
+    textarea.disabled = false;
+  });
+});
