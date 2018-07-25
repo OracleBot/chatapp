@@ -1,8 +1,6 @@
 // You can find your project ID in your Dialogflow agent settings
 const projectId = 'ardysdev1'; //https://dialogflow.com/docs/agents#settings
-// const query = 'hello';
 const languageCode = 'en-US';
-
 
 // Instantiate a DialogFlow client.
 const dialogflow = require('dialogflow');
@@ -41,7 +39,6 @@ exports.getResponse = function (sessionId, query, socket, index) {
                 var fulfillmentText = result.fulfillmentText;
                 var bot_txt_reply = fulfillmentText.replace(/,/g, "");
                 var bot_txt_reply_arr = bot_txt_reply.split("|");
-
                 if (bot_txt_reply_arr.length > 1) {
                     socket.emit('a_txt_reply', { response: bot_txt_reply_arr[0], msg_index: index });
                     socket.emit('a_txt_reply_btn', { response: bot_txt_reply_arr.slice(1), msg_index: index });

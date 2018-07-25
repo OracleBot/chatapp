@@ -31,6 +31,8 @@ document.querySelector('.message-to-send').addEventListener('keyup', function (e
 });
 
 socket.on('a_txt_reply', function (data) {
+  console.log(`Client::a_txt_reply:response ${data.response}`);
+  console.log(`Client::a_txt_reply:index ${data.msg_index}`);
   botui.message.update(data.msg_index + 1, {
     loading: false,
     content: data.response
@@ -44,28 +46,24 @@ socket.on('a_txt_loading', function (data) {
 });
 
 socket.on('a_txt_reply_btn', function (data) {
-  textarea.disabled = true;
-  botui.action.button({
-    action: [
-      { 
-        text: 'Invoice Details',
-        value: 'Invoice'
-      },
-      { 
-        text: 'Invoice Payment Details',
-        value: 'Payment'
-      },
-      { 
-        text: 'Submit Report',
-        value: 'Report'
-      },
-      { 
-        text: 'Exit',
-        value: 'No'
-      }
-    ]
-  }).then(function (res) { // will be called when a button is clicked.
-    console.log(res.value); // will print "one" from 'value'
-    textarea.disabled = false;
+  //Creating the button array
+  console.log(`Data index ${data.index}`);
+  var btn_txt_arr = data.response;
+  var btn_arr = {
+    action: []
+  };
+  btn_txt_arr.map(function (item) {
+    btn_arr.action.push({
+      text: item,
+      value: item
+    });
   });
+
+  textarea.disabled = true;
+  console.log(data.response);
+  botui.action.button(btn_arr)
+    .then(function (res) {
+      textarea.disabled = false;
+      socket.emit('h_txt_query', { query: res.value, msg_index: data.index});
+    });
 });

@@ -120,6 +120,15 @@ section {
 .botui-actions-buttons-button {
   line-height: 1 !important;
   background-color: #3498DB;
+  border-radius: 20px;
+}
+
+.botui-messages-container {
+  padding: 0px 20px;
+}
+
+.botui-actions-container {
+  padding: 0px 20px;
 }
 
 .botui-actions-buttons button {
@@ -138,8 +147,8 @@ section {
   border-right: none; /* Prevent double borders */
 }
 
-.botui-actions-buttons-button+.botui-actions-buttons-button {
-  margin-top: 4px !important;
+.botui-actions-buttons-button{
+  margin-top: 6px !important;
   margin-right: 4px !important;
   margin-left: 0px !important;
 }
