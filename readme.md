@@ -19,3 +19,9 @@ heroku open
 heroku restart
 heroku logs --tail
 https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-heroku-for-node-js-app-dda9f4eda798
+
+Cloud Functions:
+Deployment:
+gcloud beta functions deploy ardysDev1WebHook --trigger-http
+
+Sure! I have submitted $InvoiceRegisterReport report and it will be emailed to you once completed.
