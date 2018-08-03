@@ -35,10 +35,20 @@ document.querySelector('.message-to-send').addEventListener('keyup', function (e
 socket.on('a_txt_reply', function (data) {
   console.log(`Client::a_txt_reply:response ${data.response}`);
   console.log(`Client::a_txt_reply:index ${data.msg_index}`);
-  botui.message.update(data.msg_index + 1, {
-    loading: false,
-    content: data.response
-  });
+  //Remove
+  var x = data.response;
+  var bot_txt_reply_arr = x.split("<br>");
+  var y = 0;
+  for(let o=0; o<bot_txt_reply_arr.length ;o++){
+    botui.message.update(data.msg_index + 1, {
+      loading: false,
+      content: bot_txt_reply_arr[o]
+    });
+  }
+  // botui.message.update(data.msg_index + 1, {
+  //   loading: false,
+  //   content: data.response
+  // });
 });
 
 socket.on('a_txt_loading', function (data) {

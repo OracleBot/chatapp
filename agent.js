@@ -41,11 +41,15 @@ exports.getResponse = function (sessionId, query, socket, index) {
             if (result.intent) {
                 //Repalcing commas
                 var fulfillmentText = result.fulfillmentText;
-                var bot_txt_reply = fulfillmentText.replace(/,/g, "");
+                // var bot_txt_reply = fulfillmentText.replace(/,/g, "");
+                var bot_txt_reply = "Invoice #: 0000118 <br> Payment Status : Paid <br> PO #: 0001148941 <br> Vendor: DEBBIE SIEGEL CONSULTING LLC <br> Invoice Amount: 7000 <br> Invoice Status : APPROVED|Button 1|Button 2";
+                var a = "Invoice #: 0000118 <br> Payment Status : Paid <br> PO #: 0001148941 <br> Vendor: DEBBIE SIEGEL CONSULTING LLC <br> Invoice Amount: 7000 <br> Invoice Status : APPROVED";
+                    
                 var bot_txt_reply_arr = bot_txt_reply.split("|");
+                console.log(bot_txt_reply_arr);
                 if (bot_txt_reply_arr.length > 1) {
-                    socket.emit('a_txt_reply', { response: bot_txt_reply_arr[0], msg_index: index });
-                    socket.emit('a_txt_reply_btn', { response: bot_txt_reply_arr.slice(1), msg_index: index });
+                    socket.emit('a_txt_reply', { response: a, msg_index: index });
+                    // socket.emit('a_txt_reply_btn', { response: bot_txt_reply_arr.slice(1), msg_index: index });
                 } else {
                     socket.emit('a_txt_reply', { response: bot_txt_reply, msg_index: index });
                 }
