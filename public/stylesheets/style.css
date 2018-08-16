@@ -195,3 +195,7 @@ section {
   white-space: nowrap;
   overflow-x: auto;
 }
+
+.txthdr {
+  font-weight: bold;
+}
