@@ -25,3 +25,6 @@ Deployment:
 gcloud beta functions deploy ardysDev1WebHook --trigger-http
 
 Sure! I have submitted $InvoiceRegisterReport report and it will be emailed to you once completed.
+
+WebHook
+gcloud beta functions deploy ardysDev3WebHook --stage-bucket staging.ardysdev3.appspot.com --trigger-http
