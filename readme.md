@@ -14,7 +14,7 @@ https://warm-refuge-85840.herokuapp.com/ | https://git.heroku.com/warm-refuge-85
 
 git push heroku master
 heroku ps:scale web=1
-heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ardysdev1-dfe2e5d8e15b.json
+heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ardysdev3-d1917d25111f.json
 heroku open
 heroku restart
 heroku logs --tail
@@ -22,7 +22,7 @@ https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-herok
 
 Cloud Functions:
 Deployment:
-gcloud beta functions deploy ardysDev1WebHook --trigger-http
+gcloud beta functions deploy ardysDev3WebHook --trigger-http
 
 Sure! I have submitted $InvoiceRegisterReport report and it will be emailed to you once completed.
 
