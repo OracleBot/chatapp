@@ -199,3 +199,7 @@ section {
 .txthdr {
   font-weight: bold;
 }
+
+.heading {
+  color:gray;
+}
