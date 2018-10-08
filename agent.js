@@ -8,7 +8,7 @@ const sessionClient = new dialogflow.SessionsClient();
 
 // const sessionClient = new dialogflow.SessionsClient({
 //     keyFilename: 'C:\\Users\\dipverma\\Node\\chatapp\\config\\ardysdev3-d1917d25111f.json'
-// }); 
+// });
 
 // const sessionClient = new dialogflow.SessionsClient({
 //     keyFilename: '/Users/diprish/Documents/Node/chatapp/config/ardysdev1-dfe2e5d8e15b.json'
@@ -36,23 +36,44 @@ exports.getResponse = function (sessionId, query, socket, index) {
         .then(socket.emit('a_txt_loading', { loading: true }))
         .then(function (responses) {
             console.log(JSON.stringify((responses[0]), null, 2));
-            const result = responses[0].queryResult;
-            if (result.intent) {
-                //Repalcing commas
-                var fulfillmentText = result.fulfillmentText;
-                var bot_txt_reply = fulfillmentText.replace(/,/g, "");
-                var bot_txt_reply_arr = bot_txt_reply.split("|");
-                if (bot_txt_reply_arr.length > 1) {
-                    socket.emit('a_txt_reply', { response: bot_txt_reply_arr[0], msg_index: index });
-                    socket.emit('a_txt_reply_btn', { response: bot_txt_reply_arr.slice(1), msg_index: index });
+            if (responses[0].webhookStatus != null) {
+                let webhookStatusCode = responses[0].webhookStatus.code;
+                if (webhookStatusCode == 4) {
+                    let webhookStatusMessage = responses[0].webhookStatus.message;
+                    console.log(webhookStatusMessage);
+                    send_message("Hi there! I am facing issues connecting with the server. Please retry after few seconds.", index, socket);
                 } else {
-                    socket.emit('a_txt_reply', { response: bot_txt_reply, msg_index: index });
+                    const result = responses[0].queryResult;
+                    if (result.intent) {
+                        send_message(result.fulfillmentText, index, socket);
+                    } else {
+                        console.log(`  No intent matched.`);
+                    }
                 }
-            } else {
-                console.log(`  No intent matched.`);
             }
+            else {
+                const result = responses[0].queryResult;
+                if (result.intent) {
+                    send_message(result.fulfillmentText, index, socket);
+                } else {
+                    console.log(`  No intent matched.`);
+                }
+            }
+
         })
         .catch(err => {
             console.error('ERROR:', err);
         });
 };
+
+function send_message(unformatted_message, msg_idx, socket) {
+    var fulfillmentText = unformatted_message;
+    var bot_txt_reply = fulfillmentText.replace(/,/g, "");
+    var bot_txt_reply_arr = bot_txt_reply.split("|");
+    if (bot_txt_reply_arr.length > 1) {
+        socket.emit('a_txt_reply', { response: bot_txt_reply_arr[0], msg_index: msg_idx });
+        socket.emit('a_txt_reply_btn', { response: bot_txt_reply_arr.slice(1), msg_index: msg_idx });
+    } else {
+        socket.emit('a_txt_reply', { response: bot_txt_reply, msg_index: msg_idx });
+    }
+}
