@@ -198,6 +198,7 @@ section {
 
 .txthdr {
   font-weight: bold;
+  display:inline;
 }
 
 .heading {

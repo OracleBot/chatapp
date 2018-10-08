@@ -8,7 +8,7 @@ const sessionClient = new dialogflow.SessionsClient();
 
 // const sessionClient = new dialogflow.SessionsClient({
 //     keyFilename: 'C:\\Users\\dipverma\\Node\\chatapp\\config\\ardysdev3-d1917d25111f.json'
-// });
+// }); 
 
 // const sessionClient = new dialogflow.SessionsClient({
 //     keyFilename: '/Users/diprish/Documents/Node/chatapp/config/ardysdev1-dfe2e5d8e15b.json'
@@ -35,7 +35,6 @@ exports.getResponse = function (sessionId, query, socket, index) {
         .detectIntent(request)
         .then(socket.emit('a_txt_loading', { loading: true }))
         .then(function (responses) {
-            console.log('Detected intent');
             console.log(JSON.stringify((responses[0]), null, 2));
             const result = responses[0].queryResult;
             if (result.intent) {
