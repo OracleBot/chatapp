@@ -15,6 +15,8 @@ https://warm-refuge-85840.herokuapp.com/ | https://git.heroku.com/warm-refuge-85
 git push heroku master
 heroku ps:scale web=1
 heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ardysdev3-d1917d25111f.json
+
+heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ascend-test-1-dhxwoj-e80f3d4aed0b.json
 heroku open
 heroku restart
 heroku logs --tail

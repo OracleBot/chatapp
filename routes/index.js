@@ -6,7 +6,7 @@ var sessionId = null;
 router.get('/', function (req, res, next) {
   sessionId = req.query.id;
   req.app.set('sessionId', sessionId);
-  res.render('index', { title: 'Oracle Cloud Chatbot' });
+  res.render('index', { title: 'Ascend Chatbot' });
 });
 
 module.exports = router;
