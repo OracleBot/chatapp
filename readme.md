@@ -27,3 +27,6 @@ gcloud beta functions deploy ardysDev3WebHook --trigger-http
 
 WebHook
 gcloud beta functions deploy ardysDev3WebHook --stage-bucket staging.ardysdev3.appspot.com --trigger-http
+
+Latest Version Deployed:
+https://radiant-sands-65729.herokuapp.com/?id=12345
