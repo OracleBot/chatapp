@@ -74,6 +74,12 @@ function send_message(unformatted_message, msg_idx, socket) {
         socket.emit('a_txt_reply', { response: bot_txt_reply_arr[0], msg_index: msg_idx });
         socket.emit('a_txt_reply_btn', { response: bot_txt_reply_arr.slice(1), msg_index: msg_idx });
     } else {
-        socket.emit('a_txt_reply', { response: bot_txt_reply, msg_index: msg_idx });
+        //Split by [] for URLs
+        bot_txt_reply_arr = bot_txt_reply.split("[");
+        if (bot_txt_reply_arr.length > 1) {
+            socket.emit('a_txt_reply_url', { response: bot_txt_reply, msg_index: msg_idx });
+        } else {
+            socket.emit('a_txt_reply', { response: bot_txt_reply, msg_index: msg_idx });
+        }
     }
 }

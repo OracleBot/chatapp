@@ -1,13 +1,12 @@
 SET DEBUG=chatapp:* & npm start
 SET DEBUG=chatapp:* & npm run devstart
 
-$env:DEBUG=chatapp:* & npm run devstart
-
 $env:GOOGLE_APPLICATION_CREDENTIALS= "C:\Users\dipverma\Node\chatapp\ardysdev1-f045d2c6330e.json"
 set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\dipverma\Node\chatapp\ardysdev1-f045d2c6330e.json
 
 Mac
-export GOOGLE_APPLICATION_CREDENTIALS=/Users/diprish/Documents/Node/chatapp/config/ardysdev1-dfe2e5d8e15b.json
+$env:DEBUG=chatapp:* & npm run devstart
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/diprish/Downloads/chatapp/config/ascend-test-1-dhxwoj-e80f3d4aed0b.json
 
 Heroku--
 https://warm-refuge-85840.herokuapp.com/ | https://git.heroku.com/warm-refuge-85840.git
