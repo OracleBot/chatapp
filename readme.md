@@ -63,7 +63,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 (Windows - Command Prompt)
 Set the path to Google Service Account
-set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\dipverma\Node\chatapp\ardysdev1-f045d2c6330e.json
+set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\dipverma\ChatBot\chatapp\config\ascentbot-v1-fnmlep-d9e9fe0fd688.json
 
 Development 
 SET DEBUG=chatapp:* & npm run devstart

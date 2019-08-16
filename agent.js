@@ -1,20 +1,12 @@
 // You can find your project ID in your Dialogflow agent settings
-const projectId = 'ascend-test-1-dhxwoj'; //https://dialogflow.com/docs/agents#settings
+const projectId = 'ascentbot-v1-fnmlep'; //https://dialogflow.com/docs/agents#settings
 const languageCode = 'en-US';
 
 // Instantiate a DialogFlow client.
 const dialogflow = require('dialogflow');
 const sessionClient = new dialogflow.SessionsClient();
 
-// const sessionClient = new dialogflow.SessionsClient({
-//     keyFilename: 'C:\\Users\\dipverma\\Node\\chatapp\\config\\ardysdev3-d1917d25111f.json'
-// });
-
-// const sessionClient = new dialogflow.SessionsClient({
-//     keyFilename: '/Users/diprish/Documents/Node/chatapp/config/ardysdev1-dfe2e5d8e15b.json'
-// });
-
-exports.getResponse = function (sessionId, query, socket, index) {
+exports.getResponse = function(sessionId, query, socket, index) {
     console.log(`Session Id: ${sessionId}`);
     // Define session path
     const sessionPath = sessionClient.sessionPath(projectId, sessionId);
@@ -34,7 +26,7 @@ exports.getResponse = function (sessionId, query, socket, index) {
     sessionClient
         .detectIntent(request)
         .then(socket.emit('a_txt_loading', { loading: true }))
-        .then(function (responses) {
+        .then(function(responses) {
             console.log(JSON.stringify((responses[0]), null, 2));
             if (responses[0].webhookStatus != null) {
                 let webhookStatusCode = responses[0].webhookStatus.code;
@@ -50,8 +42,7 @@ exports.getResponse = function (sessionId, query, socket, index) {
                         console.log(`  No intent matched.`);
                     }
                 }
-            }
-            else {
+            } else {
                 const result = responses[0].queryResult;
                 if (result.intent) {
                     send_message(result.fulfillmentText, index, socket);
