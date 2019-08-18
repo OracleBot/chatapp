@@ -84,7 +84,7 @@ To see an example project on how to deploy your bot, please see my own configura
 heroku create
 git push heroku master
 heroku ps:scale web=1
-heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ascend-test-1-dhxwoj-e80f3d4aed0b.json
+heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ascentbot-v1-fnmlep-d9e9fe0fd688.json
 heroku open
 heroku restart
 heroku logs --tail
