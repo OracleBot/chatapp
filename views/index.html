@@ -3,34 +3,47 @@
 
 <head>
     <meta charset="utf-8">
-
-    <title>Dotie</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css" />
-
-    <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
+    <script src="https://unpkg.com/botui/build/botui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue/2.0.5/vue.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script> -->
+    <title>Dottie</title>
+    <script src="https://kit.fontawesome.com/9c5dbbacdf.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
-<body>
-
+<body onload="onPageLoad()">
     <div class="botui-app-container" id="df-bot">
         <bot-ui></bot-ui>
     </div>
-
-    <div class="chat-message clearfix" id="footer">
-        <textarea name="message-to-send" id="message-to-send" class="message-to-send" placeholder="Ask something..." rows="1"></textarea>
-        <a id="fab_send" class="fab"><i class="zmdi zmdi-mail-send text-btn"></i></a>
+    <!-- <div class="footer">
+        <div class="chat-message container">
+            <div class="chat-message box" id="footer">
+                <div class="chat-message">
+                    <textarea name="message-to-send" id="message-to-send" class="message-to-send" placeholder="Ask something..." rows="1"></textarea>
+                    <button class="speech">
+                        <i class="zmdi zmdi-mail-send text-btn zmdi-hc-2x"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="footer">
+        <div class="box">
+            <div class="chat-message">
+                <textarea name="message-to-send" id="message-to-send" class="message-to-send" placeholder="Ask something..." rows="1"></textarea>
+                <button class="speech">
+                        <i class="zmdi zmdi-mail-send text-btn zmdi-hc-2x"></i>
+                    </button>
+            </div>
+        </div>
     </div>
-
     <script src="/socket.io/socket.io.js"></script>
     <script src="javascripts/client.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </body>
-<footer>
-</footer>
 
 </html>
