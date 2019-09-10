@@ -129,6 +129,6 @@ socket.on('a_txt_reply_url', function(data) {
 
 function onPageLoad() {
     botui.message.add({
-        content: 'Greetigns from Dottie..'
+        content: 'Greetings from Dottie..'
     });
 }
