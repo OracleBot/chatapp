@@ -82,6 +82,9 @@ To see an example project on how to deploy your bot, please see my own configura
 - **Heroku**: https://github.com/kylelobo/Reddit-Bot#deploying_the_bot
 
 heroku create
+
+heroku login
+heroku git:remote -a evening-plateau-89969
 git push heroku master
 heroku ps:scale web=1
 heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ascentbot-v1-fnmlep-d9e9fe0fd688.json
