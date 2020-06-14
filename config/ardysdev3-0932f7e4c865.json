@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ardysdev3",
+  "private_key_id": "0932f7e4c86517eb1e9bc6e9172e9867058ff82f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDpxBN9cgWoSmhX\nIyO+UrJbNuszEw91h2+nN3wUgUqcF+H088fmBGG7PSy70oTKpmqb+T6xst/Cl5F8\nKVa0E5LwmW1b54RYZZUmAEIaWHwF/MzKlAvEl5F+WOSV67wqsMNyr4buzmIxhfQf\nqNfAu8kKhqk8T2RMT4KJos2pMjFwG1Ae1B9HVsO/K7giPuN0+7TNSsZa10oObiga\nlR5iq4WVAT3Jof1ZiT/FAF0P1lMK2NBpat0+UfNbU9tYjewnxMgUAa7noh8bo9mi\nhT+ev0zFhxo29BVg+RbG13BH8ftEbMEpYh2uQCQbJHWV9FwwcgWCtlRW38seIabF\n2FaGBBfVAgMBAAECggEAJBOq51wKw/lxx2roqAWGuZ2M6GW7Z8nGYUHmoBqBC3yD\nFoTt95F7DMTI69a2QDk1MEuj0ZRXxKYUIZuWojV4IrInBr1A90x8G3CEQyEfSORG\nLchx1X4Hyf5JjtqiAFul2kP9GMtYq6hu79jkrT297eYw5ZoiEkXeEURDJabVquV8\npaXgxZ+rzWM/bi4QONQm6fF+EMona5IXP52wwVISkIVtieiW3WgAMj5Xa2FEdmkP\n9l82R63r+OhHDFfnqJ2a3OdI1vmGhi8wqtS/G+aJt0SZloTG4cF9dzQCtWH+8U60\nBwL85FjRe6DvZ67aB0frnWoqJd02Pi262S4NWkVbgQKBgQD9wbHLCIwpQmcCmA0K\nyelPYVNTssHkyUnhL/nIJiwV7ZLAndTpIBQf45iFb1E9Kv1zj+xPLAMuR2XceKjY\nxihqwOqQX+kmUpkxmrmTVLpRxbOkKzTIGjBBeFT2GYM2727PdKsJsnxE2frN2CX/\nBWUu0pNumycF0o0SFqoCuWxBgQKBgQDr1SNuoBzsJrkVWxQqYxDVW0BMbHvSu9SI\nlIN41f/pFJDT8NR4G34u5xFm1h38XOrC33NdHea50aDCwIK2Ir0FutxnlvGv5CNE\nwSlebegPVcyEVlD+VMp8SJtFfkbea3bbr7dDlaspDlC6XGJzxHKcGP+Rd2yOnS1G\nJAmH6Y5YVQKBgB1uRqGmtyLd6baaTgDvVBj5z8FIXUacte3hM5YsHzbX3AptA9GZ\n/9uG+RyYwZJXlxe9HIo+L4xBiaXddK/Xo75l646dIRxpvgzLxjQ5QnbTeDdVL4T5\nzJj7TNdSNC697FsxS9kPE2yk33raU+XVCVw53hGY+xiox+XOLR+tw8mBAoGAXYRT\nXJbZYTupwTIwuO43yqM4yBVstJAPI2nhCJWzuTWSiLjDSC1+yBKQ7/qQQXaHEWeS\nU6Z7y8u4uAGm05rK4e7LX7iXdmw9IBKI2Q00LICVbRTdYT02XjpceB4u9BwhMdRo\nE8DR8qHemUfxMn8AA65WCdUVkyf4wAuiS+btr1ECgYEAsr4KEq+mWGfApMcLbbg/\nQ9+BINQrxK5uUv/HBr9sPc+g5STiqcyjJ4tBAxOcvTAnB/RqX+Ll8H6uA8/Dmtk7\nWJMHlJB0Evo1Xcs35O9du1atPXJp8S3tyR4Zh4BUhKPMz0QL8o+gl/IdbiUzQH+3\nu79V9Y7eepH6emi8vm0e+fY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ascend-chatapp@ardysdev3.iam.gserviceaccount.com",
+  "client_id": "101648082902516347871",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ascend-chatapp%40ardysdev3.iam.gserviceaccount.com"
+}
