@@ -87,7 +87,7 @@ heroku login
 heroku git:remote -a evening-plateau-89969
 git push heroku master
 heroku ps:scale web=1
-heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ascentbot-v1-fnmlep-d9e9fe0fd688.json
+heroku config:set GOOGLE_APPLICATION_CREDENTIALS=config/ardysdev3-e5fd4449e4d7.json
 heroku open
 heroku restart
 heroku logs --tail

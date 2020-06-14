@@ -3,6 +3,9 @@
 var botui = new BotUI('df-bot');
 const textarea = document.querySelector('.message-to-send');
 var socket = io.connect();
+var myDate = new Date();
+var hrs = myDate.getHours();
+var greet;
 
 //Speech recognition and pronounciation objects
 // const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -128,7 +131,14 @@ socket.on('a_txt_reply_url', function(data) {
 });
 
 function onPageLoad() {
+    if (hrs < 12)
+        greet = 'Good Morning';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening';
+
     botui.message.add({
-        content: 'Greetings from Dottie..'
+        content: greet
     });
 }
